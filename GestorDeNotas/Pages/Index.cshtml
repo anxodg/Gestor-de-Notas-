@@ -1,10 +1,93 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Gestor de Notas";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container py-4">
+    <div class="mb-4">
+        <h1 class="h3 mb-1">Gestor de Notas</h1>
+    </div>
+
+    <div class="row g-4">
+        <aside class="col-md-4 col-lg-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <button class="btn btn-outline-primary w-100 text-start"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#menuFacturacion"
+                            aria-expanded="false"
+                            aria-controls="menuFacturacion">
+                        <strong>Facturación</strong>
+                    </button>
+
+                    <div class="collapse show mt-2" id="menuFacturacion">
+                        <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                            <button class="nav-link active text-start"
+                                    id="caja-tab"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#caja-panel"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="caja-panel"
+                                    aria-selected="true">
+                                Caja
+                            </button>
+
+                            <button class="nav-link text-start"
+                                    id="recibo-tab"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#recibo-panel"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="recibo-panel"
+                                    aria-selected="false">
+                                Recibo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="col-md-8 col-lg-9">
+            <div class="tab-content">
+                <div class="tab-pane fade show active"
+                     id="caja-panel"
+                     role="tabpanel"
+                     aria-labelledby="caja-tab"
+                     tabindex="0">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white">
+                            <h2 class="h5 mb-0">Caja</h2>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-0">Aquí puedes añadir el contenido de Caja.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade"
+                     id="recibo-panel"
+                     role="tabpanel"
+                     aria-labelledby="recibo-tab"
+                     tabindex="0">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white">
+                            <h2 class="h5 mb-0">Recibo</h2>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-0">Aquí puedes añadir el contenido de Recibo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
+
+<!--Botón tema claro y oscuro-->
+<button id="btn-tema" class="bg-black py-0.5 px-1.5 rounded-full text-white transition-colors duration-300">
+    <i id="icono-tema" class="bi bi-moon-stars"></i>
+</button>
